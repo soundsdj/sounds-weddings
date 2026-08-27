@@ -408,3 +408,15 @@ a.venue-card{display:flex; flex-direction:column;}
 a.venue-card .card-cta{margin-top:auto; padding-top:16px;}
 .card-cta span{white-space:nowrap;}
 .card-cta svg{flex:none; width:18px; height:18px;}
+
+/* ---- Photo band (golf landing) ---- */
+.photo-band{position:relative; overflow:hidden; background:#111;}
+.photo-band>img{display:block; width:100%; height:clamp(240px,40vw,500px); object-fit:cover; object-position:center 46%;}
+.photo-band .cap{position:absolute; left:0; right:0; bottom:0; padding:60px 0 26px;
+  background:linear-gradient(to top, rgba(17,17,17,.9) 12%, rgba(17,17,17,.45) 55%, transparent);}
+.photo-band .cap p{color:#fff; font-family:var(--font-display); font-weight:600; letter-spacing:-.01em;
+  font-size:clamp(1.1rem,2.4vw,1.65rem); line-height:1.35; max-width:620px; margin:0; text-wrap:pretty;}
+@media(max-width:600px){
+  .photo-band>img{object-position:center 52%;}
+  .photo-band .cap{padding:48px 0 20px;}
+}
