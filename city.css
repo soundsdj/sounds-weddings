@@ -338,12 +338,6 @@ section{position:relative;}
 /* ============================================================
    City landing page additions
    ============================================================ */
-.crumbs{background:var(--paper); border-bottom:1px solid var(--border); padding:14px 0; font-size:13px;}
-.crumbs ol{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px; align-items:center; color:var(--text-muted);}
-.crumbs a{color:var(--text-muted); font-weight:600;}
-.crumbs a:hover{color:var(--gold-press);}
-.crumbs li[aria-current]{color:var(--ink); font-weight:600;}
-.crumbs .sep{opacity:.45;}
 
 .hero-city{min-height:82svh;}
 .hero-city .hero-photo{position:absolute; inset:0; z-index:1; width:100%; height:100%; object-fit:cover;}
