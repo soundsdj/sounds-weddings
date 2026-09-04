@@ -135,7 +135,7 @@ img{display:block; max-width:100%;}
 .hero{position:relative; min-height:100svh; display:flex; align-items:center;
   overflow:hidden; background:#0d0d0d;}
 .hero .hero-bg{position:absolute; inset:0; z-index:0;
-  background:url('assets/first-dance-golden.jpg') center/cover no-repeat;
+  background:url('first-dance-golden.jpg') center/cover no-repeat;
   filter:blur(34px) brightness(.42); transform:scale(1.14);}
 .hero video{position:absolute; inset:0; width:100%; height:100%;
   object-fit:contain; object-position:right center; z-index:1;}
