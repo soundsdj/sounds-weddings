@@ -357,8 +357,16 @@ section{position:relative;}
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-7EG50CWDVF');
-  gtag('config', 'AW-972541419');
+    gtag('config', 'G-7EG50CWDVF', {
+    'linker': {
+      'domains': ['weddings.soundsdjevents.com', 'soundsdjevents.com']
+    }
+  });
+  gtag('config', 'AW-972541419', {
+    'linker': {
+      'domains': ['weddings.soundsdjevents.com', 'soundsdjevents.com']
+    }
+  });
 </script>
 </head>
 <body>
