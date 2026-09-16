@@ -11,8 +11,9 @@
    which is what makes that work.
 
    Events sent:
-     book_consultation_click  any click through to /appointment
+     check_date_click         any click on a Check Your Date / See the Prices CTA
      phone_click              any click-to-call
+     generate_lead            the /thanks page loading, i.e. a real form submission
    Import these into Google Ads as conversion actions:
      Goals > Conversions > + Create conversion action > Import > Google Analytics 4
 */
@@ -66,13 +67,13 @@ document.addEventListener('click', function(e){
   var label = ((a.innerText || a.textContent || '').trim().replace(/\s+/g, ' ')).slice(0, 80);
   var page = sdjPageName();
 
-  if (href.indexOf('/appointment') !== -1) {
-    gtag('event', 'book_consultation_click', {
+  if (href === '#check' || href === '#pricing' || href.indexOf('/appointment') !== -1) {
+    gtag('event', 'check_date_click', {
       'page_name': page,
       'link_text': label,
       'link_url': href
     });
-    if (window.fbq) fbq('trackCustom', 'BookConsultationClick', { page_name: page });
+    if (window.fbq) fbq('trackCustom', 'CheckDateClick', { page_name: page });
   } else if (href.indexOf('tel:') === 0) {
     gtag('event', 'phone_click', {
       'page_name': page,
@@ -82,3 +83,10 @@ document.addEventListener('click', function(e){
     if (window.fbq) fbq('trackCustom', 'PhoneClick', { page_name: page });
   }
 }, true);
+
+/* The form now lives on the page and redirects to /thanks on success, so the
+   thank-you page loading IS the conversion. Fired once, on view. */
+if (/^\/thanks\/?$/.test(location.pathname)) {
+  gtag('event', 'generate_lead', { 'page_name': 'thanks', 'currency': 'CAD', 'value': 2900 });
+  if (window.fbq) fbq('track', 'Lead');
+}

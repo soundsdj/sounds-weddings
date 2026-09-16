@@ -7,8 +7,8 @@
 <link rel="canonical" href="https://weddings.soundsdjevents.com/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="favicon.svg">
-<title>The Sounds — Wedding DJ & MC | Book Your Free Consultation</title>
-<meta name="description" content="One host. One DJ. Your whole night, start to finish. DJ Joe personally MCs and DJs your wedding — 30+ years, 5.0 from 50+ couples. Serving Burlington & Southern Ontario.">
+<title>The Sounds — Wedding DJ & MC | Check Your Date</title>
+<meta name="description" content="One host. One DJ. Your whole night, start to finish. DJ Joe personally MCs and DJs your wedding — hundreds of weddings, 5.0 from 50+ couples. Serving Burlington & Southern Ontario.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -281,6 +281,32 @@ section{position:relative;}
 .cta-band .call:hover{color:var(--gold);}
 .area-line{color:rgba(255,255,255,.55); font-size:14px; margin-top:34px; letter-spacing:.01em;}
 
+/* ---- Slim final band + on-page date-check form ---- */
+.cta-slim{padding:clamp(56px,7vw,84px) 0;}
+.cta-slim .btn-row{margin-top:30px;}
+.form-band{background:#F3EEE4;}
+.form-grid{display:grid; grid-template-columns:.95fr 1.05fr; gap:60px; align-items:start;}
+.form-copy h2{font-size:clamp(1.9rem,3.6vw,2.7rem); margin-top:14px;}
+.form-copy p{color:var(--text-muted); font-size:1.1rem; margin-top:18px; line-height:1.62;}
+.form-steps{list-style:none; margin:30px 0 0; padding:0; display:flex; flex-direction:column; gap:18px;}
+.form-steps li{display:flex; gap:14px; align-items:flex-start;}
+.form-steps .n{flex:none; width:28px; height:28px; border-radius:50%; background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:800; font-size:13px;}
+.form-steps strong{font-family:var(--font-display); font-weight:700; color:var(--ink); display:block; font-size:1.02rem;}
+.form-steps span.t{color:var(--text-muted); font-size:.96rem;}
+.alt-contact{margin-top:34px; padding-top:26px; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:12px;}
+.alt-contact .row{display:flex; align-items:center; gap:11px; font-size:1.02rem; color:var(--text-body);}
+.alt-contact svg{width:17px; height:17px; color:var(--gold-press); flex:none;}
+.alt-contact a{font-weight:700; color:var(--ink);}
+.alt-contact a:hover{color:var(--gold-press);}
+.form-shell{background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); padding:38px 34px;}
+.form-shell h3{font-family:var(--font-display); font-weight:800; font-size:1.3rem;}
+.form-shell .hint{color:var(--text-muted); font-size:.95rem; margin-top:8px;}
+.form-shell{min-height:1180px;}
+.form-shell iframe{width:100%; min-height:1066px; border:0; display:block; margin-top:22px;}
+.form-shell .fine{color:var(--text-muted); font-size:13px; margin-top:16px; text-align:center;}
+@media(max-width:900px){ .form-grid{grid-template-columns:1fr; gap:42px;} }
+@media(max-width:560px){ .form-shell{padding:28px 20px;} }
+
 /* ---- Footer ---- */
 .site-footer{background:#0d0d0d; color:rgba(255,255,255,.7); padding:56px 0 40px;}
 .footer-top{display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px; align-items:flex-start;}
@@ -354,7 +380,7 @@ section{position:relative;}
 
 <!-- ============ EDIT THESE TWO LINES ============
      Booking link + phone are used in every CTA below. -->
-<!-- BOOKING URL: https://soundsdjevents.com/appointment   PHONE: 289-768-8677 -->
+<!-- CTAs anchor to the on-page form at #check.   PHONE: 289-768-8677 -->
 
 <!-- ===================== HEADER ===================== -->
 <header class="site-header" id="header">
@@ -383,7 +409,7 @@ section{position:relative;}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span>289-768-8677</span>
       </a>
-      <a class="btn btn-hdr" href="https://soundsdjevents.com/appointment" target="_blank" rel="noopener"><span class="hdr-full">Book Free Consultation</span><span class="hdr-short">Book Now</span></a>
+      <a class="btn btn-hdr" href="#check"><span class="hdr-full">Check Your Date</span><span class="hdr-short">Check Date</span></a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-controls="nav" aria-expanded="false"><svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg><svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
   </div>
@@ -401,11 +427,8 @@ section{position:relative;}
       <h1>One host. One DJ.<br><span class="accent">Your whole night</span>, start to finish.</h1>
       <p class="hero-sub">The person who plans your wedding is the one standing at the mic and behind the decks — me, personally, every time. No roster. No handoffs. You stay present; I hold the rest.</p>
       <div class="hero-cta-row">
-        <a class="btn btn-gold" href="https://soundsdjevents.com/appointment" target="_blank" rel="noopener">
-          Book Your Free Consultation
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-        <span class="hero-note">No pressure. No obligation. Just a conversation.</span>
+        <a class="btn btn-gold" href="#check">Check Your Date <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <span class="hero-note">Availability and a real number within 24 hours.</span>
       </div>
       <div class="trust">
         <div class="trust-item">
@@ -414,7 +437,7 @@ section{position:relative;}
           <span class="trust-lbl">from 50+ couples</span>
         </div>
         <span class="trust-sep"></span>
-        <div class="trust-item"><span class="trust-num">30+</span><span class="trust-lbl">years behind the mic</span></div>
+        <div class="trust-item"><span class="trust-num">Hundreds</span><span class="trust-lbl">of weddings hosted</span></div>
         <span class="trust-sep"></span>
         <div class="trust-item"><span class="trust-num">MC&nbsp;+&nbsp;DJ</span><span class="trust-lbl">one person, both roles</span></div>
       </div>
@@ -445,7 +468,7 @@ section{position:relative;}
       <div class="pillar">
         <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
         <h3>A floor that stays full</h3>
-        <p>30+ years of reading crowds means the right song at the right moment — from first dance to last call.</p>
+        <p>Reading a room is the whole job — the right song at the right moment, from first dance to last call.</p>
       </div>
     </div>
   </div>
@@ -578,7 +601,7 @@ section{position:relative;}
         <div class="gold-rule"></div>
         <span class="eyebrow">Meet your host</span>
         <h2>I'm the one standing at the mic when it counts.</h2>
-        <p>I've spent 30+ years learning what makes a night feel effortless — the timing of an entrance, the pause before a first dance, the song that finally fills the floor. From the first conversation to your last song, it's me holding the threads.</p>
+        <p>I've hosted hundreds of weddings, and what I've really been learning all that time is what makes a night feel effortless — the timing of an entrance, the pause before a first dance, the song that finally fills the floor. From the first conversation to your last song, it's me holding the threads.</p>
         <p>You stay present. I hold the rest. That's the whole idea.</p>
         <img class="joe-sig" src="logo-joe-seyler-script.png" alt="Joe Seyler signature">
       </div>
@@ -613,7 +636,7 @@ section{position:relative;}
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></span>Calm, confident leadership that keeps the night flowing</li>
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></span>A timeline built with you months ahead, in a private portal</li>
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></span>An MC who reads the room and lands every moment</li>
-          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></span>30+ years making receptions feel effortless</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></span>Someone who makes the whole reception feel effortless</li>
         </ul>
       </div>
     </div>
@@ -621,7 +644,7 @@ section{position:relative;}
 </section>
 
 <!-- ===================== FINAL CTA ===================== -->
-<section class="cta-band">
+<section class="cta-band cta-slim">
   <img class="bg" src="dance-floor-evening.jpg" alt="" aria-hidden="true">
   <div class="wrap">
     <span class="eyebrow on-dark">Let's talk about your day</span>
@@ -629,18 +652,40 @@ section{position:relative;}
     <p>Tell me about your wedding. No pressure, no obligation — just a conversation about the night you're picturing.</p>
     <p class="area-line" style="margin-top:16px;">Most couples invest somewhere between $2,400 and $3,500.</p>
     <div class="btn-row">
-      <a class="btn btn-gold" href="https://soundsdjevents.com/appointment" target="_blank" rel="noopener">
-        Book Your Free Consultation
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a class="call" href="tel:+12897688677">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        or call 289-768-8677
-      </a>
+      <a class="call" href="tel:+12897688677"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Or call 289-768-8677</a>
     </div>
     <p class="area-line">Serving Burlington · Oakville · Hamilton · Mississauga · Cambridge · Guelph · Toronto · Niagara</p>
   </div>
 </section>
+<section class="band form-band" id="check">
+  <div class="wrap">
+    <div class="form-grid">
+      <div class="form-copy">
+        <div class="gold-rule"></div>
+        <span class="eyebrow">Check your date</span>
+        <h2>Tell me your date and I'll come back within 24 hours.</h2>
+        <p>The first thing I do is check whether I'm free, because there is no point talking about anything else otherwise. No obligation and no hard sell, just a straight answer and a real number for what you actually want.</p>
+        <ol class="form-steps">
+          <li><span class="n">1</span><span><strong>You send the date</strong><span class="t">Takes about thirty seconds. No phone call required yet.</span></span></li>
+          <li><span class="n">2</span><span><strong>I check and reply within 24 hours</strong><span class="t">Availability and an exact number for your date, venue and hours.</span></span></li>
+          <li><span class="n">3</span><span><strong>Then we talk, only if you want to</strong><span class="t">A call about your day, or nothing at all. Your move either way.</span></span></li>
+        </ol>
+        <div class="alt-contact">
+          <span class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Rather just talk? <a href="tel:+12897688677">289-768-8677</a></span></span>
+          <span class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg><span>Or email <a href="mailto:joe@soundsdj.ca">joe@soundsdj.ca</a></span></span>
+        </div>
+      </div>
+      <div class="form-shell">
+        <h3>Is your date open?</h3>
+        <p class="hint">Takes about thirty seconds.</p>
+        <iframe src="https://api.profitflo.io/widget/form/joqkukwpHHTTU2rNci2B?city=Home" style="width:100%;min-height:1066px;border:none;border-radius:10px;display:block" id="inline-joqkukwpHHTTU2rNci2B" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Sounds - Wedding Contact Form" data-height="1066" data-layout-iframe-id="inline-joqkukwpHHTTU2rNci2B" data-form-id="joqkukwpHHTTU2rNci2B" data-cookie-consent="false" title="Sounds - Wedding Contact Form" loading="lazy"></iframe>
+        <script src="https://api.profitflo.io/js/form_embed.js"></script>
+        <p class="fine">I reply personally within 24 hours. Your details go nowhere else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="site-footer">
