@@ -14,8 +14,8 @@
      check_date_click         any click on a Check Your Date / See the Prices CTA
      phone_click              any click-to-call
      generate_lead            the /thanks page loading, i.e. a real form submission
-   Import these into Google Ads as conversion actions:
-     Goals > Conversions > + Create conversion action > Import > Google Analytics 4
+   The /thanks page also fires the Google Ads conversion "Wedding Inquiry
+   (landing form)" directly with its own event snippet — no GA4 import needed.
 */
 
 window.dataLayer = window.dataLayer || [];
@@ -88,5 +88,8 @@ document.addEventListener('click', function(e){
    thank-you page loading IS the conversion. Fired once, on view. */
 if (/^\/thanks\/?$/.test(location.pathname)) {
   gtag('event', 'generate_lead', { 'page_name': 'thanks', 'currency': 'CAD', 'value': 2900 });
+  /* Google Ads "Wedding Inquiry (landing form)", id 7790333453, primary.
+     Value ($300 CAD) is fixed on the action itself. */
+  gtag('event', 'conversion', { 'send_to': 'AW-972541419/cYBcCI2c3IIdEOub388D' });
   if (window.fbq) fbq('track', 'Lead');
 }
