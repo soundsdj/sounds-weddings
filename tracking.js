@@ -26,24 +26,39 @@ var SDJ_LINKER = { 'domains': ['weddings.soundsdjevents.com', 'soundsdjevents.co
 gtag('config', 'G-7EG50CWDVF', { 'linker': SDJ_LINKER });
 gtag('config', 'AW-972541419', { 'linker': SDJ_LINKER });
 
+/* Clarity and the Meta pixel load a moment after the page appears (or on the
+   visitor's first scroll, tap, click or key), so their ~250 KB doesn't compete
+   with the hero photo on a phone. Their queues exist from the start, so any
+   event fired earlier is held and sent once they load. The thanks page loads
+   them straight away so no conversion is ever missed. Changed 7 Oct 2026. */
+function sdjLoadLater(fn){
+  if (/^\/thanks\/?$/.test(location.pathname)) { fn(); return; }
+  var done = false, evs = ['scroll','pointerdown','keydown','touchstart'];
+  function go(){ if (done) return; done = true;
+    evs.forEach(function(e){ removeEventListener(e, go, true); }); fn(); }
+  evs.forEach(function(e){ addEventListener(e, go, { capture: true, passive: true, once: true }); });
+  if (document.readyState === 'complete') setTimeout(go, 2500);
+  else addEventListener('load', function(){ setTimeout(go, 2500); });
+}
+function sdjAddScript(src){
+  var t = document.createElement('script'); t.async = true; t.src = src;
+  var y = document.getElementsByTagName('script')[0]; y.parentNode.insertBefore(t, y);
+}
+
 /* Microsoft Clarity */
-(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "yd28luey3g");
+window.clarity = window.clarity || function(){ (window.clarity.q = window.clarity.q || []).push(arguments); };
+sdjLoadLater(function(){ sdjAddScript('https://www.clarity.ms/tag/yd28luey3g'); });
 
 /* Meta Pixel — same id as soundsdjevents.com, so the landing pages and the
    booking flow feed one pixel. Actual bookings are tracked by the pixel on
    the GHL thank-you page; the click below is intent only, so it uses a custom
    event rather than a standard "Lead" that would inflate Meta's numbers. */
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+!function(f){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];}(window);
 fbq('init','860582841130253');
 fbq('track','PageView');
+sdjLoadLater(function(){ sdjAddScript('https://connect.facebook.net/en_US/fbevents.js'); });
 
 /* Which city page is this? /wedding-dj-burlington -> "burlington". */
 function sdjPageName(){
