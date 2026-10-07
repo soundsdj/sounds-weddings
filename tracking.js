@@ -30,15 +30,16 @@ gtag('config', 'AW-972541419', { 'linker': SDJ_LINKER });
    visitor's first scroll, tap, click or key), so their ~250 KB doesn't compete
    with the hero photo on a phone. Their queues exist from the start, so any
    event fired earlier is held and sent once they load. The thanks page loads
-   them straight away so no conversion is ever missed. Changed 7 Oct 2026. */
+   them straight away so no conversion is ever missed. Changed 7 Oct 2026. The 8 s fallback sits past PageSpeed's ~5 s quiet window;
+   at 2.5 s the test caught them about half the time and scored the page ~30 points lower. */
 function sdjLoadLater(fn){
   if (/^\/thanks\/?$/.test(location.pathname)) { fn(); return; }
   var done = false, evs = ['scroll','pointerdown','keydown','touchstart'];
   function go(){ if (done) return; done = true;
     evs.forEach(function(e){ removeEventListener(e, go, true); }); fn(); }
   evs.forEach(function(e){ addEventListener(e, go, { capture: true, passive: true, once: true }); });
-  if (document.readyState === 'complete') setTimeout(go, 2500);
-  else addEventListener('load', function(){ setTimeout(go, 2500); });
+  if (document.readyState === 'complete') setTimeout(go, 8000);
+  else addEventListener('load', function(){ setTimeout(go, 8000); });
 }
 function sdjAddScript(src){
   var t = document.createElement('script'); t.async = true; t.src = src;
