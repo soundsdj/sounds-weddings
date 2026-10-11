@@ -2,7 +2,9 @@
    Loaded by every page. Single source of truth — edit here, not per page.
 
    GA4        G-7EG50CWDVF   (same property as soundsdjevents.com)
-   Google Ads AW-972541419
+   Google Ads AW-972541419   (loader + config live inline in each page's <head>
+                             so Google's tag scanner can see them; the GA4
+                             config and all events stay here)
    Clarity    yd28luey3g
    Meta Pixel 860582841130253
 
@@ -24,7 +26,6 @@ gtag('js', new Date());
 
 var SDJ_LINKER = { 'domains': ['weddings.soundsdjevents.com', 'soundsdjevents.com'] };
 gtag('config', 'G-7EG50CWDVF', { 'linker': SDJ_LINKER });
-gtag('config', 'AW-972541419', { 'linker': SDJ_LINKER });
 
 /* Clarity and the Meta pixel load a moment after the page appears (or on the
    visitor's first scroll, tap, click or key), so their ~250 KB doesn't compete
