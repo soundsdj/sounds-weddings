@@ -62,6 +62,18 @@ fbq('init','860582841130253');
 fbq('track','PageView');
 sdjLoadLater(function(){ sdjAddScript('https://connect.facebook.net/en_US/fbevents.js'); });
 
+/* ProfitFlo chat widget — the same "Master DJ AI" Conversation AI agent as on
+   soundsdjevents.com (widget 6a23a991e53da97e71ee22c1). Loads late like the
+   tags above so it never slows the hero photo or the form. Added 11 Oct 2026. */
+sdjLoadLater(function(){
+  var s = document.createElement('script');
+  s.src = 'https://widgets.leadconnectorhq.com/loader.js';
+  s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+  s.setAttribute('data-widget-id', '6a23a991e53da97e71ee22c1');
+  s.setAttribute('data-source', 'WEBSITE');
+  document.body.appendChild(s);
+});
+
 /* Which city page is this? /wedding-dj-burlington -> "burlington". */
 function sdjPageName(){
   var p = location.pathname.replace(/\/$/, '');
