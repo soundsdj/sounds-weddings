@@ -43,6 +43,7 @@
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+.band[id]{scroll-margin-top:72px;}
 html,body{overflow-x:hidden; max-width:100%;}
 body{
   margin:0; font-family:var(--font-body); color:var(--text-body);
@@ -349,6 +350,7 @@ section{position:relative;}
   .wrap{padding:0 20px;}
   .includes-list{grid-template-columns:1fr;}
   .btn{width:100%; justify-content:center;}
+  .btn-hdr{width:auto;}
   .hero .wrap{padding-top:104px; padding-bottom:48px;}
   .hero h1{font-size:clamp(2.15rem,8.6vw,3rem);}
   .hero-sub{font-size:1.05rem; margin-top:18px;}
@@ -402,19 +404,10 @@ section{position:relative;}
       <img class="logo logo-black" src="logo-horizontal-color-black.png" alt="The Sounds DJ Services & Entertainment">
     </a>
 <nav class="site-nav" id="nav">
-      <a href="https://soundsdjevents.com/weddings">Weddings</a>
-      <span class="nav-drop">
-        <button class="nav-drop-btn" type="button">Events <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-        <span class="nav-menu">
-          <a href="https://soundsdjevents.com/corporate-events">Corporate Events</a>
-          <a href="https://soundsdjevents.com/school-events">School Events</a>
-          <a href="https://soundsdjevents.com/private-celebrations">Private Celebrations</a>
-        </span>
-      </span>
-      <a href="https://soundsdjevents.com/planning-experience">Planning Experience</a>
-      <a href="https://soundsdjevents.com/about-us">About</a>
-      <a href="service-area">Service Area</a>
-      <a href="https://soundsdjevents.com/contact-us">Contact</a>
+      <a href="#meet">Meet Joe</a>
+      <a href="#why">Why me</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#venues">Venues</a>
     </nav>
     <div class="header-actions">
       <a class="header-phone" href="tel:+12897688677">
@@ -435,9 +428,9 @@ section{position:relative;}
   </video>
   <div class="wrap">
     <div class="hero-inner">
-      <span class="eyebrow on-dark">Weddings · Burlington &amp; Southern Ontario</span>
-      <h1>One host. One DJ.<br><span class="accent">Your whole night</span>, start to finish.</h1>
-      <p class="hero-sub">The person who plans your wedding is the one standing at the mic and behind the decks — me, personally, every time. No roster. No handoffs. You stay present; I hold the rest.</p>
+      <span class="eyebrow on-dark">Wedding DJ · Burlington &amp; Southern Ontario</span>
+      <h1>You book Joe, you get Joe.<br><span class="accent">Your wedding DJ</span>, start to finish.</h1>
+      <p class="hero-sub">With a lot of big DJ companies, you meet your DJ two weeks before the wedding. With me, the person on your consultation call is the person playing your night, so everything you tell me while we plan actually makes it to the dance floor.</p>
       <div class="hero-cta-row">
         <a class="btn btn-gold" href="#check">Check Your Date <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         <span class="hero-note">Availability and a real number within 24 hours.</span>
@@ -457,8 +450,25 @@ section{position:relative;}
   </div>
 </section>
 
+<!-- ===================== MEET JOE ===================== -->
+<section class="band band-white" id="meet">
+  <div class="wrap">
+    <div class="joe-grid">
+      <div class="joe-photo"><img src="dj-joe-podium.jpg" alt="DJ Joe hosting a wedding reception"></div>
+      <div class="joe-body">
+        <div class="gold-rule"></div>
+        <span class="eyebrow">Meet your host</span>
+        <h2>I'm the one standing at the mic when it counts.</h2>
+        <p>I've hosted hundreds of weddings, and what I've really been learning all that time is what makes a night feel effortless — the timing of an entrance, the pause before a first dance, the song that finally fills the floor. From the first conversation to your last song, it's me holding the threads.</p>
+        <p>You stay present. I hold the rest. That's the whole idea.</p>
+        <img class="joe-sig" src="logo-joe-seyler-script.png" alt="Joe Seyler signature">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== PROMISE ===================== -->
-<section class="band band-cream">
+<section class="band band-cream" id="why">
   <div class="wrap">
     <div class="sec-head center">
       <div class="gold-rule"></div>
@@ -541,13 +551,13 @@ section{position:relative;}
 </section>
 
 <!-- ===================== REVIEWS ===================== -->
-<section class="band band-cream">
+<section class="band band-cream" id="reviews">
   <div class="wrap">
     <div class="review-head">
       <div class="sec-head">
         <div class="gold-rule"></div>
         <span class="eyebrow">Real couples, real weddings</span>
-        <h2>Rated 5.0 by the people<br>who trusted their day to me.</h2>
+        <h2>Rated 5.0 by the people <br>who trusted their day to me.</h2>
       </div>
       <div class="rating-badge">
         <span class="big">5.0</span>
@@ -578,7 +588,7 @@ section{position:relative;}
 </section>
 
 <!-- ===================== VENUES ===================== -->
-<section class="band band-white">
+<section class="band band-white" id="venues">
   <div class="wrap">
     <div class="sec-head center">
       <div class="gold-rule"></div>
@@ -604,25 +614,8 @@ section{position:relative;}
   </div>
 </section>
 
-<!-- ===================== MEET JOE ===================== -->
-<section class="band band-cream">
-  <div class="wrap">
-    <div class="joe-grid">
-      <div class="joe-photo"><img src="dj-joe-podium.jpg" alt="DJ Joe hosting a wedding reception"></div>
-      <div class="joe-body">
-        <div class="gold-rule"></div>
-        <span class="eyebrow">Meet your host</span>
-        <h2>I'm the one standing at the mic when it counts.</h2>
-        <p>I've hosted hundreds of weddings, and what I've really been learning all that time is what makes a night feel effortless — the timing of an entrance, the pause before a first dance, the song that finally fills the floor. From the first conversation to your last song, it's me holding the threads.</p>
-        <p>You stay present. I hold the rest. That's the whole idea.</p>
-        <img class="joe-sig" src="logo-joe-seyler-script.png" alt="Joe Seyler signature">
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== FIT / NOT ME ===================== -->
-<section class="band band-white">
+<section class="band band-cream" id="fit">
   <div class="wrap">
     <div class="sec-head center">
       <div class="gold-rule"></div>
