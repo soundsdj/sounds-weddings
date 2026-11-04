@@ -31,6 +31,7 @@
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+.band[id]{scroll-margin-top:72px;}
 html,body{overflow-x:hidden; max-width:100%;}
 body{
   margin:0; font-family:var(--font-body); color:var(--text-body);
@@ -314,6 +315,7 @@ section{position:relative;}
   .wrap{padding:0 20px;}
   .includes-list{grid-template-columns:1fr;}
   .btn{width:100%; justify-content:center;}
+  .btn-hdr{width:auto;}
   .hero .wrap{padding-top:104px; padding-bottom:48px;}
   .hero h1{font-size:clamp(2.15rem,8.6vw,3rem);}
   .hero-sub{font-size:1.05rem; margin-top:18px;}
