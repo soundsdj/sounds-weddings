@@ -379,6 +379,55 @@ section{position:relative;}
   html{scroll-behavior:auto;}
   *{transition:none !important;}
 }
+
+/* Price box + FAQ, copied from city.css (11 Nov 2026) */
+.faq{max-width:840px; margin:52px auto 0; border-top:1px solid var(--border);}
+.faq details{border-bottom:1px solid var(--border);}
+.faq summary{cursor:pointer; list-style:none; padding:24px 44px 24px 0; position:relative;
+  font-family:var(--font-display); font-weight:700; font-size:1.12rem; color:var(--ink); letter-spacing:-.01em;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:""; position:absolute; right:8px; top:31px; width:11px; height:11px;
+  border-right:2px solid var(--gold); border-bottom:2px solid var(--gold);
+  transform:rotate(45deg); transition:transform var(--ease-out) .24s;}
+.faq details[open] summary::after{transform:rotate(225deg); top:33px;}
+.faq details p{color:var(--text-muted); font-size:1.05rem; line-height:1.7; margin:0 0 26px; max-width:700px;}
+
+.band-offer{background:#F6EFE3;}
+.tiers{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:52px; align-items:stretch;}
+.tier{background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:38px 32px;
+  box-shadow:var(--shadow-sm); display:flex; flex-direction:column; height:100%;}
+.tier-pop{border:2px solid var(--gold); box-shadow:var(--shadow-lg); padding-top:30px;}
+.tier-flag{align-self:flex-start; background:#F1E9DA; border:1px solid var(--gold); border-radius:var(--radius-pill);
+  padding:7px 16px; font-family:var(--font-body); font-weight:700; font-size:11px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--gold-press); margin-bottom:18px;}
+.tier h3{font-family:var(--font-display); font-weight:800; font-size:1.5rem; letter-spacing:-.02em;}
+.tier-sub{color:var(--text-muted); font-size:.98rem; margin-top:7px;}
+.tier-fig{font-family:var(--font-display); font-weight:900; font-size:3rem; letter-spacing:-.035em;
+  color:var(--gold-text); line-height:1; margin:18px 0 0;}
+.tier ul{list-style:none; margin:26px 0 0; padding:26px 0 0; border-top:1px solid var(--border);
+  display:flex; flex-direction:column; gap:15px; flex:1;}
+.tier li{display:flex; gap:12px; align-items:flex-start; font-size:1rem; line-height:1.5; color:var(--text-muted);}
+.tier li strong{font-weight:700; color:var(--ink);}
+.tier li .ic{flex:none; width:21px; height:21px; border-radius:50%; background:var(--gold); color:#fff;
+  display:flex; align-items:center; justify-content:center; margin-top:2px;}
+.tier li .ic svg{width:12px; height:12px;}
+.tier-note{color:var(--text-muted); font-size:.95rem; margin-top:20px; font-style:italic;}
+.tier .btn{margin-top:26px; width:100%; justify-content:center;}
+.price-rows{display:grid; grid-template-columns:1fr 1fr; gap:26px; max-width:860px; margin:52px auto 0;}
+.price-rows div{background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 32px;}
+.price-rows h4{font-family:var(--font-display); font-weight:800; font-size:1.02rem; color:var(--ink); margin:0;}
+.price-rows p{color:var(--text-muted); font-size:.96rem; margin-top:8px;}
+.tiers-2{grid-template-columns:repeat(2,1fr); max-width:820px; margin-left:auto; margin-right:auto;}
+@media(max-width:1000px){ .tiers{grid-template-columns:1fr; gap:20px;} .tiers-2{grid-template-columns:1fr;} .tier-pop{order:-1;} }
+@media(max-width:620px){ .price-rows{grid-template-columns:1fr;} .tier{padding:32px 26px;} }
+
+/* ---- Ghost + outline buttons ---- */
+.btn-ghost{background:rgba(255,255,255,.08); color:#fff; border:1.5px solid rgba(255,255,255,.34); backdrop-filter:blur(6px);}
+.btn-ghost:hover{color:var(--ink); background:#fff; border-color:#fff; transform:translateY(-3px); box-shadow:var(--shadow-md);}
+.btn-ghost svg{transition:transform var(--ease-out) .24s;}
+.btn-ghost:hover svg{transform:translateY(2px);}
+.btn-outline{background:transparent; color:var(--ink); border:1.5px solid var(--border);}
+.btn-outline:hover{color:var(--ink); border-color:var(--gold); background:var(--paper); transform:translateY(-3px); box-shadow:var(--shadow-md);}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-972541419"></script>
@@ -433,6 +482,7 @@ section{position:relative;}
       <p class="hero-sub">With a lot of big DJ companies, you meet your DJ two weeks before the wedding. With me, the person on your consultation call is the person playing your night, so everything you tell me while we plan actually makes it to the dance floor.</p>
       <div class="hero-cta-row">
         <a class="btn btn-gold" href="#check">Check Your Date <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a class="btn btn-ghost" href="#pricing">See the Prices <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
         <span class="hero-note">Availability and a real number within 24 hours.</span>
       </div>
       <div class="trust">
@@ -495,6 +545,63 @@ section{position:relative;}
     </div>
   </div>
 </section>
+
+<!-- PRICES (same box as the city pages) -->
+<section class="band band-offer" id="pricing">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="gold-rule"></div>
+      <span class="eyebrow">What it costs</span>
+      <h2>The numbers, before you ask for them.</h2>
+      <p>Three ways to book me. Every one of them is me, personally, from your ceremony through to your last song.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <h3>The Essentials</h3>
+        <span class="tier-sub">Ceremony to last dance</span>
+        <div class="tier-fig">$2,400</div>
+        <ul>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Ceremony, cocktail hour and reception</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Your private planning portal</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Planning calls, plus a full review three weeks before</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>All sound, microphones and dance floor lighting</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Coordination with your venue and your other vendors</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>I'll support your MC with whatever they need</span></li>
+        </ul>
+        <a class="btn btn-outline" href="#check">Check Your Date</a>
+      </div>
+      <div class="tier tier-pop">
+        <span class="tier-flag">Most couples choose this</span>
+        <h3>The Signature</h3>
+        <span class="tier-sub">With me on the microphone</span>
+        <div class="tier-fig">$2,900</div>
+        <ul>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong>Everything in The Essentials</strong></span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Plus me as your host for the night. I learn how you met during planning, and I tell your story back to your room during dinner.</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Speeches, entrances and every announcement handled, so nobody in your family has to hold a microphone.</span></li>
+        </ul>
+        <p class="tier-note">That isn't an add-on. It's the reason people hire me instead of someone with a speaker.</p>
+        <a class="btn btn-gold" href="#check">Check Your Date</a>
+      </div>
+      <div class="tier">
+        <h3>The Full Experience</h3>
+        <span class="tier-sub">Your room, transformed</span>
+        <div class="tier-fig">$3,500</div>
+        <ul>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong>Everything in The Signature</strong></span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>12 uplighting fixtures placed around your room, colour chosen together at planning</span></li>
+        </ul>
+        <a class="btn btn-outline" href="#check">Check Your Date</a>
+      </div>
+    </div>
+    <div class="price-rows">
+      <div><h4>What moves the number</h4><p>Your date, hours of coverage, travel outside the area, and enhancements beyond what's listed.</p></div>
+      <div><h4>What doesn't</h4><p>Nothing gets added after you book. Travel is quoted up front. The quote you accept is the invoice you pay.</p></div>
+    </div>
+    <p class="venue-note">Every package covers your ceremony, cocktail hour and reception. Tell me your date and venue and I'll confirm the exact number within 24 hours.</p>
+  </div>
+</section>
+
 
 <!-- ===================== INCLUDES ===================== -->
 <section class="band band-white">
@@ -647,6 +754,24 @@ section{position:relative;}
     </div>
   </div>
 </section>
+
+<!-- QUESTIONS (city-page answers with the city names taken out) -->
+<section class="band band-white" id="questions">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="gold-rule"></div>
+      <span class="eyebrow">Questions</span>
+      <h2>The things couples actually ask me.</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Are you the DJ who actually shows up on the day?</summary><p>Yes. I am the only person who takes the mic at my weddings. The person you meet at the consultation, build the timeline with and email at eleven at night is the person standing in your reception. There is no roster and no substitute.</p></details>
+      <details><summary>How much does a wedding DJ cost?</summary><p>Most couples invest somewhere between $2,400 and $3,500 with me. The three packages and everything each one includes are set out on this page. Where you land depends on how much of the day you want covered and whether you add uplighting or a separate ceremony setup. Send me your date and venue and I will confirm the exact number within 24 hours.</p></details>
+      <details><summary>Can you handle both the ceremony and the reception?</summary><p>Yes, and at properties where the ceremony, cocktail hour and dinner all happen in different spots, that is usually the smarter way to do it. I bring a separate ceremony system so nothing has to be torn down and rebuilt while your guests are watching.</p></details>
+      <details><summary>How far ahead do dates get booked?</summary><p>Peak Saturdays from June through October tend to go twelve to eighteen months out, and long weekends go first. Because I only take one wedding a day and there is only one of me, my calendar closes earlier than a company with several DJs. If you have a date in mind, ask early.</p></details>
+    </div>
+  </div>
+</section>
+
 
 <!-- ===================== FINAL CTA ===================== -->
 <section class="cta-band cta-slim">
